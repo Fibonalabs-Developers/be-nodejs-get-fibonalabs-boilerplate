@@ -70,17 +70,17 @@ function createApp(_a) {
                     root = path_1.default.resolve(appPath);
                     appName = path_1.default.basename(root);
                     useYarn = useNpm ? false : should_use_yarn_1.shouldUseYarn();
-                    displayedCommand = useYarn ? 'yarn' : 'npm';
+                    displayedCommand = useYarn ? "yarn" : "npm";
                     originalDirectory = process.cwd();
-                    if (!['mysql', 'postgresql'].includes(database)) {
+                    if (!["mysql", "postgresql"].includes(database)) {
                         console.error("No configuration found for " + chalk_1.default.red(database));
                         process.exit(1);
                     }
                     return [4 /*yield*/, is_writeable_1.isWriteable(path_1.default.dirname(root))];
                 case 1:
                     if (!(_b.sent())) {
-                        console.error('The application path is not writable, please check folder permissions and try again.');
-                        console.error('It is likely you do not have write permissions for this folder.');
+                        console.error("The application path is not writable, please check folder permissions and try again.");
+                        console.error("It is likely you do not have write permissions for this folder.");
                         process.exit(1);
                     }
                     //   if (!isFolderEmpty(root, appName)) {
@@ -95,7 +95,7 @@ function createApp(_a) {
                             repoUrl = new URL(template.url);
                         }
                         catch (error) {
-                            if (error.code !== 'ERR_INVALID_URL') {
+                            if (error.code !== "ERR_INVALID_URL") {
                                 console.error(error);
                                 process.exit(1);
                             }
@@ -106,7 +106,7 @@ function createApp(_a) {
                             clone_1.default(appName, repoUrl.toString());
                         }
                         else {
-                            console.log('No URL Found');
+                            console.log("No URL Found");
                             process.exit(1);
                         }
                     }
@@ -116,16 +116,16 @@ function createApp(_a) {
                         process.exit(1);
                     }
                     process.chdir(root);
-                    run_1.default('git', ['init', '-q']);
+                    run_1.default("git", ["init", "-q"]);
                     console.log();
-                    console.log('Installing packages. This might take a couple of minutes.');
+                    console.log("Installing packages. This might take a couple of minutes.");
                     console.log();
                     return [4 /*yield*/, install_1.install(root, null, { useYarn: useYarn })];
                 case 2:
                     _b.sent();
-                    packageJson = JSON.parse(fs_1.default.readFileSync(path_1.default.join(root, 'package.json'), 'utf8'));
+                    packageJson = JSON.parse(fs_1.default.readFileSync(path_1.default.join(root, "package.json"), "utf8"));
                     packageJson = __assign(__assign({}, packageJson), { name: appName });
-                    fs_1.default.writeFileSync(path_1.default.join(root, 'package.json'), JSON.stringify(packageJson, null, 2) + os_1.default.EOL);
+                    fs_1.default.writeFileSync(path_1.default.join(root, "package.json"), JSON.stringify(packageJson, null, 2) + os_1.default.EOL);
                     if (path_1.default.join(originalDirectory, appName) === appPath) {
                         cdpath = appName;
                     }
@@ -133,13 +133,13 @@ function createApp(_a) {
                         cdpath = appPath;
                     }
                     console.log();
-                    console.log(chalk_1.default.green('Success!') + " Created " + appName + " at " + appPath);
-                    console.log('Inside that directory, you can run several commands:');
+                    console.log(chalk_1.default.green("Success!") + " Created " + appName + " at " + appPath);
+                    console.log("Inside that directory, you can run several commands:");
                     console.log();
-                    console.log('We suggest that you begin by typing:');
+                    console.log("We suggest that you begin by typing:");
                     console.log();
-                    console.log(chalk_1.default.cyan('  cd'), cdpath);
-                    console.log("  " + chalk_1.default.cyan(displayedCommand + " " + (useYarn ? '' : 'run ') + "dev"));
+                    console.log(chalk_1.default.cyan("  cd"), cdpath);
+                    console.log("  " + chalk_1.default.cyan(displayedCommand + " " + (useYarn ? "" : "run ") + "start:dev"));
                     console.log();
                     return [2 /*return*/];
             }

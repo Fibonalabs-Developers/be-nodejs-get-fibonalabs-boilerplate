@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -45,9 +46,9 @@ var validate_pkg_1 = require("./utils/validate-pkg");
 var path_1 = __importDefault(require("path"));
 var nestjsTemplate_1 = __importDefault(require("./nestjsTemplate"));
 var chalk_1 = __importDefault(require("chalk"));
-var projectPath = '';
+var projectPath = "";
 var program = {
-    name: function () { return 'create-fibonalabs-be'; },
+    name: function () { return "create-fibonalabs-be"; },
 };
 function run() {
     return __awaiter(this, void 0, void 0, function () {
@@ -55,14 +56,14 @@ function run() {
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    if (typeof projectPath === 'string') {
+                    if (typeof projectPath === "string") {
                         projectPath = projectPath.trim();
                     }
                     if (!!projectPath) return [3 /*break*/, 2];
                     return [4 /*yield*/, prompts_1.default([
                             {
-                                type: 'text',
-                                name: 'projectName',
+                                type: "text",
+                                name: "projectName",
                                 message: message_1.default.projectNameQuestion,
                                 initial: message_1.default.projectNameDefaultValue,
                                 validate: function (name) {
@@ -70,23 +71,23 @@ function run() {
                                     if (validation.valid) {
                                         return true;
                                     }
-                                    return 'Invalid project name: ' + validation.problems[0];
+                                    return "Invalid project name: " + validation.problems[0];
                                 },
                             },
                             {
-                                type: 'select',
-                                name: 'nodeFramework',
-                                message: 'Which Framework would you like to use?',
+                                type: "select",
+                                name: "nodeFramework",
+                                message: "Which Framework would you like to use?",
                                 choices: [
                                     {
-                                        title: 'NestJS',
-                                        description: 'NestJS',
-                                        value: 'nestjs',
+                                        title: "NestJS",
+                                        description: "NestJS",
+                                        value: "nestjs",
                                     },
                                     {
-                                        title: 'NodeJS',
-                                        description: 'NodeJS',
-                                        value: 'nodejs',
+                                        title: "NodeJS",
+                                        description: "NodeJS",
+                                        value: "nodejs",
                                         disabled: true,
                                     },
                                 ],
@@ -95,15 +96,15 @@ function run() {
                         ])];
                 case 1:
                     res = _b.sent();
-                    if (typeof res.projectName === 'string') {
+                    if (typeof res.projectName === "string") {
                         projectPath = res.projectName.trim();
                     }
                     if (!projectPath) {
                         console.log();
-                        console.log('Please specify the project directory:');
-                        console.log("  " + chalk_1.default.cyan(program.name()) + " " + chalk_1.default.green('<project-directory>'));
+                        console.log("Please specify the project directory:");
+                        console.log("  " + chalk_1.default.cyan(program.name()) + " " + chalk_1.default.green("<project-directory>"));
                         console.log();
-                        console.log('For example:');
+                        console.log("For example:");
                         console.log("  " + chalk_1.default.cyan(program.name()) + " " + chalk_1.default.green(message_1.default.projectNameDefaultValue));
                         console.log();
                         process.exit(1);
@@ -114,11 +115,11 @@ function run() {
                     if (!valid) {
                         console.error("Could not create a project called " + chalk_1.default.red("\"" + projectName + "\"") + " because of npm naming restrictions:");
                         problems.forEach(function (p) {
-                            return console.error("    " + chalk_1.default.red.bold('*') + " " + p);
+                            return console.error("    " + chalk_1.default.red.bold("*") + " " + p);
                         });
                         process.exit(1);
                     }
-                    if (res.nodeFramework === 'nestjs') {
+                    if (res.nodeFramework === "nestjs") {
                         nestjsTemplate_1.default(projectPath);
                     }
                     _b.label = 2;
@@ -132,7 +133,7 @@ run()
     .catch(function (reason) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         console.log();
-        console.log('Aborting installation.');
+        console.log("Aborting installation.");
         return [2 /*return*/];
     });
 }); });

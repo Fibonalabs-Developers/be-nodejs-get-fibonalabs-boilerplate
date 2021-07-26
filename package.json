@@ -1,12 +1,10 @@
 {
   "name": "@fibonalabs/create-fibonalabs-be",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "react",
-    "next",
-    "next.js",
-    "antd",
-    "material"
+    "nest",
+    "nest.js"
   ],
   "description": "Create Fibonalabs Node Backend with one command",
   "author": "Fibonalabs Team",

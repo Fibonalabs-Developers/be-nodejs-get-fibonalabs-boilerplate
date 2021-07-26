@@ -1,45 +1,45 @@
 {
-    "name": "create-fibonalabs-be",
-    "version": "0.0.1",
-    "keywords": [
-        "react",
-        "next",
-        "next.js",
-        "antd",
-        "material"
-    ],
-    "description": "Create Fibonalabs Node Backend with one command",
-    "author": "Fibonalabs Team",
-    "license": "ISC",
-    "bin": "./dist/index.js",
-    "files": [
-        "dist"
-    ],
-    "scripts": {
-        "dev:watch": "tsc && concurrently \"tsc -w\" \"nodemon dist/index.js\"",
-        "compile": "tsc",
-        "dev": "node dist/index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "dependencies": {
-        "@types/cross-spawn": "^6.0.2",
-        "@types/node": "^12.6.8",
-        "@types/prompts": "^2.0.14",
-        "@types/validate-npm-package-name": "^3.0.3",
-        "chalk": "^4.1.1",
-        "commander": "^8.0.0",
-        "concurrently": "^6.2.0",
-        "cross-spawn": "^7.0.3",
-        "nodemon": "^2.0.12",
-        "prompts": "^2.4.1",
-        "typescript": "4.3.4",
-        "validate-npm-package-name": "^3.0.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/be-nodejs-get-fibonalabs-boilerplate"
-    },
-    "engines": {
-        "node": ">=12.0.0"
-    }
+  "name": "@fibonalabs/create-fibonalabs-be",
+  "version": "0.0.1",
+  "keywords": [
+    "react",
+    "next",
+    "next.js",
+    "antd",
+    "material"
+  ],
+  "description": "Create Fibonalabs Node Backend with one command",
+  "author": "Fibonalabs Team",
+  "license": "ISC",
+  "bin": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev:watch": "tsc && concurrently \"tsc -w\" \"nodemon dist/index.js\"",
+    "compile": "tsc",
+    "dev": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/cross-spawn": "^6.0.2",
+    "@types/node": "^12.6.8",
+    "@types/prompts": "^2.0.14",
+    "@types/validate-npm-package-name": "^3.0.3",
+    "chalk": "^4.1.1",
+    "commander": "^8.0.0",
+    "concurrently": "^6.2.0",
+    "cross-spawn": "^7.0.3",
+    "nodemon": "^2.0.12",
+    "prompts": "^2.4.1",
+    "typescript": "4.3.4",
+    "validate-npm-package-name": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/be-nodejs-get-fibonalabs-boilerplate"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
 }

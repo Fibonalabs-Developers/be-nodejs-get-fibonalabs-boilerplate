@@ -21,7 +21,8 @@
     "prepublish": "rimraf dist && tsc",
     "publish": "npm publish",
     "prepare": "husky install",
-    "commit": "clear && git-cz"
+    "commit": "clear && git-cz",
+    "commit:win": "cls && git-cz"
   },
   "dependencies": {
     "@types/cross-spawn": "^6.0.2",

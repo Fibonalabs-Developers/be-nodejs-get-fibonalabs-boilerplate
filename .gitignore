@@ -121,3 +121,5 @@ out
 .setup.txt
 
 my-app
+
+dist/

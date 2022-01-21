@@ -1,0 +1,9 @@
+.husky
+example/
+node_modules/
+src/
+.eslintignore
+.prettierignore
+.prettierrc
+commitlint.config.
+tsconfig.json
